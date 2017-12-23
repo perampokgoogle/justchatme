@@ -1,0 +1,51 @@
+
+<!doctype html>
+<html>
+<head>
+<title>just chat with me!</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="manifest" href="/assets/manifest.json">
+<link rel="shortcut icon" href="/assets/chatbubble.png">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#3F51B5">
+<meta name="apple-mobile-web-app-title" content="Halo Noval!">
+<link rel="apple-touch-icon" href="/assets/chatbubble.png">
+<meta name="msapplication-TileImage" content="/assets/chatbubble.png">
+<meta name="msapplication-TileColor" content="#3F51B5">
+<meta name='theme-color' content='#3F51B5' />
+</head>
+<body>
+<header class='header'>
+<h1 class='header__title'>Personal Chat</h1>
+</header>
+<div id='chat-wrapper'>
+<div id='messages'></div>
+<div id='chat-form'>
+<form onsubmit='send_chat(this, event)'>
+<input id="m" autocomplete="off" />
+<button type="submit"><i class='ion-paper-airplane'></i></button>
+</form>
+</div>
+</div>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/assets/jquery-3.2.1.min.js"></script>
+<script src="/assets/script.js"></script>
+<script>
+        /** How About Speeding CSS? **/
+		setTimeout(function(){
+			var arrCss = [
+                '//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css',
+                '/assets/normalize.css',
+                '/assets/style.css'
+			];
+			for(var urlz in arrCss){
+				var lnk = document.createElement('link');
+				lnk.href = arrCss[urlz];
+				lnk.rel = 'stylesheet';
+				document.getElementsByTagName('head')[0].appendChild(lnk);
+            }
+		}, 600);
+    </script>
+</body>
+</html>
